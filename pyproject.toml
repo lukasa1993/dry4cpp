@@ -1,16 +1,31 @@
 [build-system]
-requires=["setuptools>=69","wheel"]
-build-backend="setuptools.build_meta"
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name="dry4cpp"
-version="0.1.0"
-description="Duplication analysis for C++ projects"
-readme="README.md"
-requires-python=">=3.11"
-license={text="MIT"}
+name = "dry4cpp"
+version = "1.0.0"
+description = 'Syntax-aware duplication analysis for C++ projects'
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "lukasa1993"}]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = ["tree-sitter-language-pack==0.13.0"]
+
 [project.scripts]
-dry4cpp="dry4cpp.cli:main"
+dry4cpp = "dry4cpp.cli:main"
+
 [tool.setuptools.packages.find]
-where=["src"]
+where = ["src"]
+
 [tool.pytest.ini_options]
-testpaths=["tests"]
+testpaths = ["tests"]
+addopts = "-ra"
